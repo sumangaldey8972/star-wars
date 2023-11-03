@@ -9,7 +9,7 @@ const StarshipsDetails = ({ url }) => {
             {
                 isLoading ? <Text>Loading...</Text> :
                     <React.Fragment>
-                        <Heading textAlign="center" fontFamily="Poppins" as='h5' size='sm' >{data?.name}</Heading>
+                        <Heading className='sub-heading' textAlign="center" fontFamily="Poppins" as='h5' size='sm' >{data?.name}</Heading>
                         <Text fontSize="sm" mt={4}>
                             <strong>Model:</strong> {data?.model}
                         </Text>

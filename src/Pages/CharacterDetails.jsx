@@ -19,15 +19,18 @@ const CharacterDetails = () => {
     return (
         <React.Fragment>
             {
-                isLoading ? <Box display="flex" alignItems="center" maxHeight="90vh" justifyContent="center" > <CircularProgress isIndeterminate margin="auto" color="black" /> </Box> :
-                    <Box height="90vh" sx={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }} >
-                        <Box pl="1rem" >
-                            <Link to="/dashboard" >
-                                <ArrowBackIcon fontSize="2rem" />
-                            </Link>
-                        </Box>
-                        <Heading textAlign="center" fontFamily="Poppins" >{data?.name}</Heading>
-                        <Flex>
+                isLoading ? <Box mt="5rem" display="flex" alignItems="center" maxHeight="90vh" justifyContent="center" > <CircularProgress isIndeterminate margin="auto" color="black" /> </Box> :
+                    <Box mt="4.5rem" height="90vh" sx={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }} >
+                        <Flex justifyContent="space-between" alignItems="center" >
+                            <Box pl="1rem" >
+                                <Link to="/dashboard" >
+                                    <ArrowBackIcon fontSize="2rem" />
+                                </Link>
+                            </Box>
+                            <Heading className='heading' textAlign="center" fontFamily="Poppins" borderBottom="3px solid black" width="fit-content" margin="auto" padding=".2rem" >{data?.name}</Heading>
+                            <Box>&nbsp;</Box>
+                        </Flex>
+                        <Flex justifyContent="space-between"  >
                             <PersonalDetails data={data ? data : {}} homeWorld={homeWorld?.name} />
                             <MoviesDetails data={data ? data : {}} />
                             <Species data={data ? data.species : {}} />

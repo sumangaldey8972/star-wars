@@ -10,11 +10,14 @@ const Navbar = () => {
             w="100%"
             p={3}
             bg="black"
+            position="fixed"
+            top="0"
+            zIndex="1"
         >
             <Box>
                 <Text fontSize='2xl' color="white" fontFamily="Roboto Condensed" >Star Wars</Text>
             </Box>
-            <Flex gap={2} >
+            <Flex gap={2}>
                 <Box>
                     <Text color="white" fontFamily="Roboto Condensed">Welcome!</Text>
                     <Text color="white" fontFamily="Roboto Condensed">Jedi</Text>

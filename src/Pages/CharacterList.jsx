@@ -17,8 +17,8 @@ const CharacterList = () => {
     return (
         <>
             {
-                isLoading ? <Box display="flex" alignItems="center" maxHeight="90vh" justifyContent="center" > <CircularProgress isIndeterminate margin="auto" color="black" /> </Box> :
-                    <SimpleGrid columns={[1, 3, 4]} gap={4} alignItems="center" justifyContent="center" p={3} >
+                isLoading ? <Box mt="4.5rem" display="flex" alignItems="center" maxHeight="90vh" justifyContent="center" > <CircularProgress isIndeterminate margin="auto" color="black" /> </Box> :
+                    <SimpleGrid mt="4rem" columns={[1, 3, 4]} gap={4} alignItems="center" justifyContent="center" p={3} >
                         {data.results.map((el, i) => {
                             return (
                                 <Box key={i} borderColor='#32e3ff'

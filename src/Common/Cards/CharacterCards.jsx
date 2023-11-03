@@ -4,11 +4,13 @@ import {
     Flex,
     Text,
     Heading,
-    Badge
+    Badge,
+    Button,
 } from "@chakra-ui/react";
 
 import image from "../../Assets/milky-way.jpg"
 import { Link } from "react-router-dom";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 
 function Card({ props, id }) {
@@ -27,9 +29,16 @@ function Card({ props, id }) {
             color="white"
             sx={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
-            <Heading as="h3" size="md" fontFamily="Poppins">
-                {props.name}
-            </Heading>
+            <Flex justifyContent="center" gap="2" alignItems="center" >
+                <Box borderRadius="50%" display="flex" alignItems="center" justifyContent="center" backgroundColor="grey" height="2.8rem" width="2.8rem" >
+                    <Text textAlign="center" fontSize="3xl" >
+                        {props.name.split('')[0]}
+                    </Text>
+                </Box>
+                <Heading as="h3" size="md" textAlign="center" fontFamily="Poppins">
+                    {props.name}
+                </Heading>
+            </Flex>
             <Flex justifyContent="space-between" mt={2}>
                 <Badge variant="solid" colorScheme="teal">
                     Gender - {props.gender}
@@ -53,12 +62,13 @@ function Card({ props, id }) {
             <Text fontSize="sm">
                 <strong>Eye Color:</strong> {props.eye_color}
             </Text>
-            <Text float="right" fontSize="sm" cursor="pointer" >
-                <Link to={`/details/${id + 1}`} >
-                    <strong>View Details</strong>
-                </Link>
-            </Text>
-
+            <Flex justifyContent="end" mt={1} >
+                <Button p=".2rem" size="xs" float="right" title="Click to see more details" fontSize="sm" cursor="pointer" >
+                    <Link to={`/details/${id + 1}`} >
+                        <strong>View Details</strong> <ExternalLinkIcon />
+                    </Link>
+                </Button>
+            </Flex>
         </Box>
     );
 }

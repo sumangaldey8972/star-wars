@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { useGetFilms } from '../../hooks/useFilms'
-import { Badge, Box, Flex, Heading, Text } from '@chakra-ui/react'
+import { Box, Heading, Text } from '@chakra-ui/react'
 
 export const Films = ({ url }) => {
     const { isLoading, data } = useGetFilms(url)
@@ -10,15 +10,17 @@ export const Films = ({ url }) => {
             {
                 isLoading ? <Text>Loading...</Text> :
                     <React.Fragment>
-                        <Heading textAlign="center" fontFamily="Poppins" as='h5' size='sm' >{data?.title}</Heading>
-                        <Flex justifyContent="space-between" gap={2} mt={2}>
-                            <Badge variant="solid" colorScheme="teal">
-                                Director - {data?.director}
-                            </Badge>
-                            <Badge variant="solid" colorScheme="purple">
-                                Released - {data?.release_date}
-                            </Badge>
-                        </Flex>
+                        <Heading className='sub-heading' fontFamily="Poppins" as='h5' size='sm' >{data?.title}</Heading>
+                        <Text fontSize="sm" mt={4}>
+                            <strong>Director:</strong> {data?.director}
+                        </Text>
+                        <Text fontSize="sm">
+                            <strong>Producer:</strong> {data?.producer}
+                        </Text>
+                        <Text fontSize="sm">
+                            <strong>Realese Date:</strong> {data?.release_date}
+                        </Text>
+
                     </React.Fragment>
             }
 

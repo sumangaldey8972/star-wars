@@ -9,7 +9,7 @@ const SpeciesDetails = ({ url }) => {
             {
                 isLoading ? <Text>Loading...</Text> :
                     <React.Fragment>
-                        <Heading textAlign="center" fontFamily="Poppins" as='h5' size='sm' >{speciesData?.name}</Heading>
+                        <Heading className='sub-heading' textAlign="center" fontFamily="Poppins" as='h5' size='sm' >{speciesData?.name}</Heading>
                         <Text fontSize="sm" mt={4}>
                             <strong>classification:</strong> {speciesData?.classification}
                         </Text>
