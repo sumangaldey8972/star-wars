@@ -3,9 +3,13 @@ import { useRoutes } from "react-router-dom";
 import { Box, CircularProgress } from "@chakra-ui/react";
 import { systemChildren } from "./systemChildren";
 import DashboardLayout from "../Common/Layout/DashboardLayout";
+import LoginPage from "../Pages/Login";
 
 const Routes = () => {
     const routes = useRoutes([
+        {
+            path: "/login", element: <LoginPage />
+        },
         {
             path: "/", element: (
                 <DashboardLayout />

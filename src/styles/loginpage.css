@@ -1,0 +1,88 @@
+.left_div {
+    width: 50vh;
+}
+
+.logo_div {
+    margin: 1rem;
+    width: 15%;
+    rotate: -1deg;
+}
+
+
+.form_container {
+    width: 50%;
+    margin: 3rem auto;
+}
+
+.right_div {
+    width: 50vh;
+    position: relative;
+}
+
+.right_div button {
+    position: absolute;
+    right: 10px;
+    top: 4px;
+}
+
+.logo_image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: .5rem;
+    /* mix-blend-mode: color-burn; */
+}
+
+/* Styles for mobile view */
+@media only screen and (min-width: 168px) and (max-width: 520px) {
+    .logo_div {
+        margin: 1rem;
+        width: 23%;
+    }
+
+    .right_div {
+        display: none;
+    }
+
+    .form_container {
+        width: 90%;
+    }
+}
+
+/* Styles for tablet view */
+@media only screen and (min-width: 521px) and (max-width: 1024px) {
+    .logo_div {
+        margin: 1rem;
+        width: 30%;
+    }
+
+    .left_div {
+        width: 50vh;
+    }
+
+    .form_container {
+        width: 70%;
+    }
+
+    .right_div {
+        display: block;
+        width: 50vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .right_div>div {
+        margin-top: 2rem;
+    }
+}
+
+/* Styles for desktop view */
+@media only screen and (min-width: 1025px) {
+    .right_div {
+        display: block;
+        align-items: center;
+    }
+
+    .right_div>div {
+        margin-top: 5rem;
+    }
+}
