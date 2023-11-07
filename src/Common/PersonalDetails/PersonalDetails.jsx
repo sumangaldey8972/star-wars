@@ -3,7 +3,7 @@ import React from 'react'
 
 const PersonalDetails = ({ data, homeWorld }) => {
     return (
-        <Box padding="1rem" width="20%" >
+        <Box padding="1rem" width={{ base: '100%', sm: '20%', lg: '20%' }} >
             <Heading textAlign="center" as='h3' size='lg' fontFamily="Roboto Condensed">Personal Details</Heading>
             <Divider orientation='horizontal' />
             <Text fontSize="sm" mt={4}>

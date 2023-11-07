@@ -1,7 +1,9 @@
-import { Avatar, Box, Flex, Text } from '@chakra-ui/react'
+import { Avatar, Box, Flex, Text, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
 
 const Navbar = () => {
+    const temp = useMediaQuery("(min-width:480px)")
+    console.log(temp)
     return (
         <Flex as="nav"
             align="center"
@@ -15,7 +17,7 @@ const Navbar = () => {
             zIndex="1"
         >
             <Box>
-                <Text fontSize='2xl' color="white" fontFamily="Roboto Condensed" >Star Wars</Text>
+                <Text fontSize={{ base: 'lg', sm: '2xl', lg: '3xl' }} color="white" fontFamily="Roboto Condensed" >Star Wars</Text>
             </Box>
             <Flex gap={2}>
                 <Box>

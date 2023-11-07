@@ -2,6 +2,8 @@ import { Box, Button, CircularProgress, Flex, SimpleGrid } from '@chakra-ui/reac
 import React, { useState } from 'react'
 import { useCharacterList } from '../hooks/useCharacterList'
 import Card from '../Common/Cards/CharacterCards'
+import DesktopAndTabPagination from '../Common/Pagination/DesktopAndTabPagination'
+import MobilePagination from '../Common/Pagination/MobilePagination'
 
 const CharacterList = () => {
 
@@ -18,7 +20,7 @@ const CharacterList = () => {
         <>
             {
                 isLoading ? <Box mt="4.5rem" display="flex" alignItems="center" maxHeight="90vh" justifyContent="center" > <CircularProgress isIndeterminate margin="auto" color="black" /> </Box> :
-                    <SimpleGrid mt="4rem" columns={[1, 3, 4]} gap={4} alignItems="center" justifyContent="center" p={3} >
+                    <SimpleGrid mt="4rem" columns={[1, 3, 4]} gap={{ sm: "3", lg: "3" }} alignItems="center" justifyContent="center" p={3} >
                         {data.results.map((el, i) => {
                             return (
                                 <Box key={i} borderColor='#32e3ff'
@@ -29,24 +31,8 @@ const CharacterList = () => {
                         })}
                     </SimpleGrid>
             }
-
-            <Flex justify="center" mt={4} mb={2} >
-                {Array.from({ length: totalPages }).map((_, i) => (
-                    <Button
-                        key={i}
-                        cursor="pointer"
-                        mx={2}
-                        onClick={() => handlePageChange(i + 1)}
-                        color={currentPage === i + 1 ? 'white' : 'black'}
-                        bg={currentPage === i + 1 ? 'black' : 'white'}
-                        borderColor='#32e3ff'
-                        boxShadow='0 0 10px #32e3ff'
-                        _hover={{ color: 'black', bg: 'white' }}
-                    >
-                        {i + 1}
-                    </Button>
-                ))}
-            </Flex>
+            {isLoading ? "" : <DesktopAndTabPagination totalPages={totalPages} currentPage={currentPage} handlePageChange={handlePageChange} />}
+            {isLoading ? "" : <MobilePagination totalPages={totalPages} currentPage={currentPage} handlePageChange={handlePageChange} />}
         </>
     )
 }

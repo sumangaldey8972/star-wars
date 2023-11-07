@@ -23,13 +23,13 @@ function Card({ props, id }) {
             m={1}
             boxShadow="lg"
             maxW="sm"
-            minW="250px"
+            // minW="250px"
             fontFamily="Poppins"
             bg="black"
             color="white"
             sx={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
-            <Flex justifyContent="center" gap="2" alignItems="center" >
+            <Flex justifyContent="center" gap="2" alignItems="center">
                 <Box borderRadius="50%" display="flex" alignItems="center" justifyContent="center" backgroundColor="grey" height="2.8rem" width="2.8rem" >
                     <Text textAlign="center" fontSize="3xl" >
                         {props.name.split('')[0]}
@@ -39,7 +39,11 @@ function Card({ props, id }) {
                     {props.name}
                 </Heading>
             </Flex>
-            <Flex justifyContent="space-between" mt={2}>
+            <Flex
+                justifyContent="space-between"
+                mt={2}
+                gap={{ sm: '3' }}
+            >
                 <Badge variant="solid" colorScheme="teal">
                     Gender - {props.gender}
                 </Badge>

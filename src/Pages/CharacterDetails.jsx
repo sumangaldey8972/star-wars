@@ -20,7 +20,7 @@ const CharacterDetails = () => {
         <React.Fragment>
             {
                 isLoading ? <Box mt="5rem" display="flex" alignItems="center" maxHeight="90vh" justifyContent="center" > <CircularProgress isIndeterminate margin="auto" color="black" /> </Box> :
-                    <Box mt="4.5rem" height="90vh" sx={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }} >
+                    <Box mt="4.5rem" height="90vh" sx={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center center' }} >
                         <Flex justifyContent="space-between" alignItems="center" >
                             <Box pl="1rem" >
                                 <Link to="/dashboard" >
@@ -30,7 +30,7 @@ const CharacterDetails = () => {
                             <Heading className='heading' textAlign="center" fontFamily="Poppins" borderBottom="3px solid black" width="fit-content" margin="auto" padding=".2rem" >{data?.name}</Heading>
                             <Box>&nbsp;</Box>
                         </Flex>
-                        <Flex justifyContent="space-between"  >
+                        <Flex justifyContent="space-between" flexDirection={{ base: 'column', sm: 'row', lg: 'row' }}  >
                             <PersonalDetails data={data ? data : {}} homeWorld={homeWorld?.name} />
                             <MoviesDetails data={data ? data : {}} />
                             <Species data={data ? data.species : {}} />
